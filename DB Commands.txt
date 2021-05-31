@@ -1,0 +1,106 @@
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@SharleneR1804 
+SharleneR1804
+/
+ICF_Java
+1
+00
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+ICF_Java/DB Commands
+@SharleneR1804
+SharleneR1804 Update DB Commands
+Latest commit 0da592c 4 days ago
+ History
+ 1 contributor
+74 lines (63 sloc)  2.01 KB
+  
+Creating the tables
+
+Employee table
+CREATE TABLE `test123`.`employee` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `Fname` VARCHAR(45) NOT NULL,
+  `Lname` VARCHAR(45) NULL,
+  `EID` INT NOT NULL,
+  `Employeecol` VARCHAR(45) NULL,
+  `Startdate` DATE NULL,
+  `Designation` VARCHAR(45) NULL,
+  `Department` VARCHAR(45) NULL,
+  `Enddate` DATE NULL,
+  `Status` VARCHAR(45) NULL,
+  `DOB` DATE NULL,
+  `RepMgr` VARCHAR(45) NULL,
+  `Gender` VARCHAR(2) NULL,
+  `BloodGrp` VARCHAR(4) NULL,
+  `Address` VARCHAR(200) NULL,
+  PRIMARY KEY (`id`));
+  
+  Dependants table
+  CREATE TABLE `test123`.`dependants` (
+  `id` INT NOT NULL,
+  `did` INT NOT NULL,
+  `Fname` VARCHAR(45) NOT NULL,
+  `Lname` VARCHAR(45) NULL,
+  `Gender` VARCHAR(2) NULL,
+  `DOB` DATE NULL,
+  `Relationship` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`));
+  
+  Education Table
+  CREATE TABLE `test123`.`education` (
+  `ID` INT NOT NULL,
+  `EdID` VARCHAR(10) NOT NULL,
+  `Type` VARCHAR(45) NULL,
+  `Ed_Startdate` DATE NULL,
+  `Ed_Enddate` DATE NULL,
+  `Institute` VARCHAR(45) NULL,
+  `Address` VARCHAR(200) NULL,
+  `Percentage` INT NULL,
+  PRIMARY KEY (`ID`));
+ 
+Indexing Tables
+
+ALTER TABLE `test123`.`employee` 
+ADD INDEX `eid_idx` (`EID` ASC) ;
+
+ALTER TABLE `test123`.`education` 
+ADD INDEX `edid_idx` (`EdID` ASC) ;
+
+ALTER TABLE `test123`.`dependants` 
+ADD INDEX `did_idx` (`did` ASC);
+
+Adding Keys
+
+ALTER TABLE `test123`.`dependants` 
+ADD CONSTRAINT `fk_did`
+  FOREIGN KEY (`did`)
+  REFERENCES `test123`.`employee` (`EID`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+  
+ALTER TABLE `test123`.`education` 
+ADD CONSTRAINT `fk_edid`
+  FOREIGN KEY (`EdID`)
+  REFERENCES `test123`.`employee` (`EID`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+ 
+Inserting Values
+INSERT INTO `test123`.`employee` (`Fname`, `Lname`, `EID`, `Startdate`, `Designation`, `Department`, `Enddate`, `Status`, `DOB`, `RepMgr`, `Gender`, `BloodGrp`, `Address`) 
+             VALUES ('Shivani', 'K R', '1010', '2017-01-09', 'Fresher', 'IT', '2019-03-04', 'OG', '1986-07-12', 'Mukesh', 'F', 'A+', '201, Soukya Apts., Malleshwaram, Bangalore');
+
