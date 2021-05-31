@@ -7,23 +7,24 @@
 <html>
 <head>
  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
- <title>education List</title>
+ <title>Education List</title>
  <link href="../../webjars/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" />
  <script src="../../webjars/bootstrap/4.0.0/js/bootstrap.min.js"></script>
  <script src="../../webjars/jquery/3.0.0/js/jquery.min.js"></script>
 </head>
 <body>
-  <h2>education List</h2>
+  <center><h2>Employee Education Details</h2></center>
   <br><br>
   <div> 
   <table class="table table-striped" style="margin: 0px;">
    <thead>
-    <th scope="row">#ID</th>
     <th scope="row">Employee ID</th>
-    <th scope="row">Name</th>
-    <th scope="row">Gender</th>
-    <th scope="row">DOB</th>
-    <th scope="row">Relationship</th>
+    <th scope="row">Education type</th>
+    <th scope="row">Startdate</th>
+    <th scope="row">Enddate</th>
+    <th scope="row">Institute</th>
+    <th scope="row">Address</th>
+    <th scope="row">Percentage</th>
     <th scope="row">Update</th>
     <th scope="row">Delete</th>
    </thead>

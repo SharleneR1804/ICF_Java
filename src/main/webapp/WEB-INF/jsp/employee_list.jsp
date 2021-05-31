@@ -13,8 +13,8 @@
  <script src="../../webjars/jquery/3.0.0/js/jquery.min.js"></script>
 </head>
 <body>
-  <h2>Employee List</h2>
-  <br><br>
+  <center><h2 style="padding:10 px;">Employee Manager</h2></center>
+  <br>
   <div> 
   <table class="table table-striped" style="margin: 0px;">
    <thead>
